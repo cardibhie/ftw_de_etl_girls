@@ -19,13 +19,25 @@ We leverage **ClickHouse** as our analytical database and **Metabase** for dashb
 git clone https://github.com/cardibhie/ftw_de_etl_girls.git
 cd ftw_de_etl_girls
 ```
-### 2. Start the Project
+### 2. Pull latest updates (DO THIS EVERY TIME BEFORE WORKING)
 ```bash
-docker-compose up -d
+git pull origin main
 ```
-### 3. Stop the Project 
+### 3. Create own branch 
 ```bash
-docker-compose down
+git checkout -b <branch-name> #sample git checkout -b lou_branch 
 ```
+### 4. Push to branch 
+- Do this when you are sure that there are no conflicts and errors with your code. Consult me first when you are going to push your code. 
+### 5. Switching branches 
+``bash
+git checkout main
+git checkout feature/<branch-name>
+
+✅ That way, everyone can:
+- Pull the latest changes
+- Work on their own branch
+- Push without overwriting other people’s work
+
 ## 👩‍💻 Team
 We are a women-led group of data engineering students, passionate about empowering others through data-driven insights.
