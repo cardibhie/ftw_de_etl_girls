@@ -81,6 +81,52 @@ docker compose --profile jobs run --rm   -w /workdir/transforms/02_chinook   dbt
 ## 3. Dimensional Model (MART layer → Star Schema)
 We design fact and dimension tables.
 
+```
+## Date Dimension
+-- Date dimension --
+DROP TABLE IF EXISTS mart.Group1_DimDate;
+CREATE TABLE mart.Group1_DimDate
+ENGINE = MergeTree
+ORDER BY tuple()
+AS
+SELECT
+   toYYYYMMDD(d) AS DateKey,
+   d AS Date,
+   toYear(d) AS Year,
+   toMonth(d) AS Month,
+   toDayOfMonth(d) AS Day,
+   toQuarter(d) AS Quarter,
+   formatDateTime(d, '%b') AS MonthName,  -- abbreviated month name (Jan, Feb, etc.)
+   toDayOfWeek(d) AS DayOfWeek
+FROM (
+   SELECT toDate('2000-01-01') + number AS d
+   FROM system.numbers
+   LIMIT 36500
+);
+```
+
+```
+-- Customer dimension --
+DROP TABLE IF EXISTS mart.Group1_DimCustomer;
+CREATE TABLE mart.Group1_DimCustomer
+ENGINE = MergeTree
+ORDER BY tuple()
+AS
+SELECT
+   customer_id AS CustomerKey,
+   COALESCE(trim(first_name), 'Unknown_FirstName') AS FirstName,
+   COALESCE(trim(last_name), 'Unknown_LastName') AS LastName,
+   COALESCE(lower(email), 'unknown_email@invalid.com') AS Email,
+   COALESCE(trim(company), 'Unknown_Company') AS Company,
+   COALESCE(trim(country), 'Unknown_Country') AS Country,
+   COALESCE(trim(city), 'Unknown_City') AS City,
+   COALESCE(postal_code, '00000') AS PostalCode,
+   support_rep_id AS SupportRepEmployeeId
+FROM raw.chinook___customer_group1
+```
+
+
+
 ## Fact Table:
 **fact_invoice_line** 
 * Grain: one row per invoice line 
