@@ -1,0 +1,229 @@
+dbt-fusion 2.0.0-preview.32
+   Loading profiles.yml
+error: dbt1005: Failed to parse profiles.yml: unknown variant `clickhouse`, expected one of `redshift`, `snowflake`, `postgres`, `bigquery`, `trino`, `datafusion`, `databricks`, `salesforce`
+  Finished 'debug'  with 1 error in 42ms
+[0m10:11:47.350869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076c6900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b47d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b47c50>]}
+
+
+============================== 10:11:47.353998 | f533ff9f-2cd7-4c34-b8f1-9310dbd7a472 ==============================
+[0m10:11:47.353998 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:11:47.354318 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'debug': 'False', 'cache_selected_only': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'target_path': 'None', 'log_path': '/Users/loubuscas/Desktop/ftw_de_etl_girls/dbt/transforms/g1_oulad/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'use_experimental_parser': 'False', 'write_json': 'True', 'fail_fast': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'log_cache_events': 'False', 'profiles_dir': '.', 'warn_error': 'None', 'use_colors': 'True', 'quiet': 'False', 'introspect': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'partial_parse': 'True', 'log_format': 'default'}
+[0m10:11:47.363027 [info ] [MainThread]: dbt version: 1.10.13
+[0m10:11:47.363409 [info ] [MainThread]: python version: 3.13.7
+[0m10:11:47.363617 [info ] [MainThread]: python path: /Users/loubuscas/Desktop/ftw_de_etl_girls/venv/bin/python3.13
+[0m10:11:47.363825 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit-Mach-O
+[0m10:11:47.402241 [info ] [MainThread]: Using profiles dir at .
+[0m10:11:47.402472 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m10:11:47.402628 [info ] [MainThread]: Using dbt_project.yml file at /Users/loubuscas/Desktop/ftw_de_etl_girls/dbt/transforms/g1_oulad/dbt_project.yml
+[0m10:11:47.402948 [info ] [MainThread]: adapter type: clickhouse
+[0m10:11:47.403140 [info ] [MainThread]: adapter version: 1.9.3
+[0m10:11:47.462422 [info ] [MainThread]: Configuration:
+[0m10:11:47.462672 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:11:47.462827 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:11:47.462968 [info ] [MainThread]: Required dependencies:
+[0m10:11:47.463156 [debug] [MainThread]: Executing "git --help"
+[0m10:11:47.480331 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:11:47.480857 [debug] [MainThread]: STDERR: "b''"
+[0m10:11:47.481026 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:11:47.481193 [info ] [MainThread]: Connection:
+[0m10:11:47.481393 [info ] [MainThread]:   driver: None
+[0m10:11:47.481521 [info ] [MainThread]:   host: clickhouse
+[0m10:11:47.481632 [info ] [MainThread]:   port: 8123
+[0m10:11:47.481742 [info ] [MainThread]:   user: ftw_user
+[0m10:11:47.481850 [info ] [MainThread]:   schema: mart
+[0m10:11:47.481958 [info ] [MainThread]:   retries: 1
+[0m10:11:47.482215 [info ] [MainThread]:   cluster: None
+[0m10:11:47.482397 [info ] [MainThread]:   database_engine: None
+[0m10:11:47.482529 [info ] [MainThread]:   cluster_mode: False
+[0m10:11:47.482652 [info ] [MainThread]:   secure: False
+[0m10:11:47.482763 [info ] [MainThread]:   verify: True
+[0m10:11:47.482874 [info ] [MainThread]:   client_cert: None
+[0m10:11:47.482982 [info ] [MainThread]:   client_cert_key: None
+[0m10:11:47.483088 [info ] [MainThread]:   connect_timeout: 10
+[0m10:11:47.483193 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:11:47.483302 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:11:47.483407 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:11:47.483514 [info ] [MainThread]:   compression: 
+[0m10:11:47.483620 [info ] [MainThread]:   check_exchange: True
+[0m10:11:47.483724 [info ] [MainThread]:   custom_settings: None
+[0m10:11:47.483831 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:11:47.483939 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:11:47.484047 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:11:47.484394 [info ] [MainThread]: Registered adapter: clickhouse=1.9.3
+[0m10:11:47.555775 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:11:47.556071 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:12:06.223087 [debug] [MainThread]: dbt_clickhouse adapter: Got a retryable error when attempting to open a clickhouse connection.
+1 attempts remaining. Retrying in 1 seconds.
+Error:
+Error HTTPConnectionPool(host='clickhouse', port=8123): Max retries exceeded with url: /? (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10df07110>: Failed to resolve 'clickhouse' ([Errno 8] nodename nor servname provided, or not known)")) executing HTTP request attempt 1 (http://clickhouse:8123)
+[0m10:12:17.234748 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:12:17.235717 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:12:17.236082 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Error HTTPConnectionPool(host='clickhouse', port=8123): Max retries exceeded with url: /? (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10df69f30>: Failed to resolve 'clickhouse' ([Errno 8] nodename nor servname provided, or not known)")) executing HTTP request attempt 1 (http://clickhouse:8123)
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:12:17.255931 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 29.952011, "process_in_blocks": "0", "process_kernel_time": 0.336984, "process_mem_max_rss": "176668672", "process_out_blocks": "0", "process_user_time": 1.339144}
+[0m10:12:17.256779 [debug] [MainThread]: Command `dbt debug` failed at 10:12:17.256669 after 29.95 seconds
+[0m10:12:17.257133 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:12:17.257418 [debug] [MainThread]: On debug: No close available on handle
+[0m10:12:17.257721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df6a190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10df96570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10dfc47c0>]}
+[0m10:12:17.258137 [debug] [MainThread]: Flushing usage events
+[0m10:12:18.838464 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:19:27.050444 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103772900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bf3d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bf3c50>]}
+
+
+============================== 10:19:27.053424 | 6f82d461-8e0c-4a0b-a88d-8183ee54b4ad ==============================
+[0m10:19:27.053424 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:19:27.053744 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'no_print': 'None', 'log_format': 'default', 'version_check': 'True', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'use_colors': 'True', 'debug': 'False', 'warn_error': 'None', 'empty': 'None', 'fail_fast': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'printer_width': '80', 'introspect': 'True', 'profiles_dir': '.', 'use_experimental_parser': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'invocation_command': 'dbt debug --profiles-dir .', 'log_path': '/Users/loubuscas/Desktop/ftw_de_etl_girls/dbt/transforms/g1_oulad/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m10:19:27.062801 [info ] [MainThread]: dbt version: 1.10.13
+[0m10:19:27.063001 [info ] [MainThread]: python version: 3.13.7
+[0m10:19:27.063278 [info ] [MainThread]: python path: /Users/loubuscas/Desktop/ftw_de_etl_girls/venv/bin/python3.13
+[0m10:19:27.063593 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit-Mach-O
+[0m10:19:27.102887 [info ] [MainThread]: Using profiles dir at .
+[0m10:19:27.103123 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m10:19:27.103280 [info ] [MainThread]: Using dbt_project.yml file at /Users/loubuscas/Desktop/ftw_de_etl_girls/dbt/transforms/g1_oulad/dbt_project.yml
+[0m10:19:27.103581 [info ] [MainThread]: adapter type: clickhouse
+[0m10:19:27.103768 [info ] [MainThread]: adapter version: 1.9.3
+[0m10:19:27.163963 [info ] [MainThread]: Configuration:
+[0m10:19:27.164202 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:19:27.164359 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:19:27.164496 [info ] [MainThread]: Required dependencies:
+[0m10:19:27.164686 [debug] [MainThread]: Executing "git --help"
+[0m10:19:27.178028 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:19:27.178493 [debug] [MainThread]: STDERR: "b''"
+[0m10:19:27.178650 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:19:27.178821 [info ] [MainThread]: Connection:
+[0m10:19:27.179000 [info ] [MainThread]:   driver: None
+[0m10:19:27.179127 [info ] [MainThread]:   host: clickhouse_personal
+[0m10:19:27.179243 [info ] [MainThread]:   port: 8123
+[0m10:19:27.179352 [info ] [MainThread]:   user: ftw_user
+[0m10:19:27.179464 [info ] [MainThread]:   schema: mart
+[0m10:19:27.179572 [info ] [MainThread]:   retries: 1
+[0m10:19:27.179683 [info ] [MainThread]:   cluster: None
+[0m10:19:27.179791 [info ] [MainThread]:   database_engine: None
+[0m10:19:27.179904 [info ] [MainThread]:   cluster_mode: False
+[0m10:19:27.180015 [info ] [MainThread]:   secure: False
+[0m10:19:27.180124 [info ] [MainThread]:   verify: True
+[0m10:19:27.180246 [info ] [MainThread]:   client_cert: None
+[0m10:19:27.180353 [info ] [MainThread]:   client_cert_key: None
+[0m10:19:27.180464 [info ] [MainThread]:   connect_timeout: 10
+[0m10:19:27.180575 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:19:27.180686 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:19:27.180796 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:19:27.180903 [info ] [MainThread]:   compression: 
+[0m10:19:27.181013 [info ] [MainThread]:   check_exchange: True
+[0m10:19:27.181121 [info ] [MainThread]:   custom_settings: None
+[0m10:19:27.181228 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:19:27.181338 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:19:27.181447 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:19:27.181758 [info ] [MainThread]: Registered adapter: clickhouse=1.9.3
+[0m10:19:27.243966 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:19:27.244322 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:19:37.811240 [debug] [MainThread]: dbt_clickhouse adapter: Got a retryable error when attempting to open a clickhouse connection.
+1 attempts remaining. Retrying in 1 seconds.
+Error:
+Error HTTPConnectionPool(host='clickhouse_personal', port=8123): Max retries exceeded with url: /? (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x109ffb110>: Failed to resolve 'clickhouse_personal' ([Errno 8] nodename nor servname provided, or not known)")) executing HTTP request attempt 1 (http://clickhouse_personal:8123)
+[0m10:19:48.826771 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:19:48.828121 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:19:48.828730 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Error HTTPConnectionPool(host='clickhouse_personal', port=8123): Max retries exceeded with url: /? (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10a065f30>: Failed to resolve 'clickhouse_personal' ([Errno 8] nodename nor servname provided, or not known)")) executing HTTP request attempt 1 (http://clickhouse_personal:8123)
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:19:48.838461 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 21.833868, "process_in_blocks": "0", "process_kernel_time": 0.259004, "process_mem_max_rss": "178487296", "process_out_blocks": "0", "process_user_time": 1.059285}
+[0m10:19:48.839699 [debug] [MainThread]: Command `dbt debug` failed at 10:19:48.839531 after 21.84 seconds
+[0m10:19:48.840368 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:19:48.840912 [debug] [MainThread]: On debug: No close available on handle
+[0m10:19:48.841398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a066190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a092570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a0bc8d0>]}
+[0m10:19:48.841947 [debug] [MainThread]: Flushing usage events
+[0m10:19:50.175588 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:22:59.483683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10780e900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c8fd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108c8fc50>]}
+
+
+============================== 10:22:59.486727 | bff70ed1-42ad-4337-8860-b49425e23be1 ==============================
+[0m10:22:59.486727 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:22:59.487047 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'use_colors': 'True', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'introspect': 'True', 'profiles_dir': '.', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'no_print': 'None', 'static_parser': 'True', 'debug': 'False', 'invocation_command': 'dbt debug --profiles-dir .', 'log_format': 'default', 'quiet': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'log_path': '/Users/loubuscas/Desktop/ftw_de_etl_girls/dbt/transforms/g1_oulad/logs', 'target_path': 'None', 'log_cache_events': 'False', 'version_check': 'True', 'write_json': 'True', 'empty': 'None'}
+[0m10:22:59.496201 [info ] [MainThread]: dbt version: 1.10.13
+[0m10:22:59.496412 [info ] [MainThread]: python version: 3.13.7
+[0m10:22:59.496556 [info ] [MainThread]: python path: /Users/loubuscas/Desktop/ftw_de_etl_girls/venv/bin/python3.13
+[0m10:22:59.496689 [info ] [MainThread]: os info: macOS-15.5-arm64-arm-64bit-Mach-O
+[0m10:22:59.535083 [info ] [MainThread]: Using profiles dir at .
+[0m10:22:59.535317 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m10:22:59.535477 [info ] [MainThread]: Using dbt_project.yml file at /Users/loubuscas/Desktop/ftw_de_etl_girls/dbt/transforms/g1_oulad/dbt_project.yml
+[0m10:22:59.535775 [info ] [MainThread]: adapter type: clickhouse
+[0m10:22:59.535963 [info ] [MainThread]: adapter version: 1.9.3
+[0m10:22:59.597508 [info ] [MainThread]: Configuration:
+[0m10:22:59.597772 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:22:59.597920 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m10:22:59.598054 [info ] [MainThread]: Required dependencies:
+[0m10:22:59.598240 [debug] [MainThread]: Executing "git --help"
+[0m10:22:59.614591 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:22:59.615061 [debug] [MainThread]: STDERR: "b''"
+[0m10:22:59.615233 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:22:59.615420 [info ] [MainThread]: Connection:
+[0m10:22:59.615642 [info ] [MainThread]:   driver: None
+[0m10:22:59.615774 [info ] [MainThread]:   host: clickhouse
+[0m10:22:59.615887 [info ] [MainThread]:   port: 8123
+[0m10:22:59.615998 [info ] [MainThread]:   user: ftw_user
+[0m10:22:59.616107 [info ] [MainThread]:   schema: mart
+[0m10:22:59.616218 [info ] [MainThread]:   retries: 1
+[0m10:22:59.616327 [info ] [MainThread]:   cluster: None
+[0m10:22:59.616434 [info ] [MainThread]:   database_engine: None
+[0m10:22:59.616545 [info ] [MainThread]:   cluster_mode: False
+[0m10:22:59.616657 [info ] [MainThread]:   secure: False
+[0m10:22:59.616764 [info ] [MainThread]:   verify: True
+[0m10:22:59.616873 [info ] [MainThread]:   client_cert: None
+[0m10:22:59.616979 [info ] [MainThread]:   client_cert_key: None
+[0m10:22:59.617085 [info ] [MainThread]:   connect_timeout: 10
+[0m10:22:59.617191 [info ] [MainThread]:   send_receive_timeout: 300
+[0m10:22:59.617310 [info ] [MainThread]:   sync_request_timeout: 5
+[0m10:22:59.617417 [info ] [MainThread]:   compress_block_size: 1048576
+[0m10:22:59.617524 [info ] [MainThread]:   compression: 
+[0m10:22:59.617630 [info ] [MainThread]:   check_exchange: True
+[0m10:22:59.617735 [info ] [MainThread]:   custom_settings: None
+[0m10:22:59.617841 [info ] [MainThread]:   use_lw_deletes: False
+[0m10:22:59.617948 [info ] [MainThread]:   allow_automatic_deduplication: False
+[0m10:22:59.618056 [info ] [MainThread]:   tcp_keepalive: False
+[0m10:22:59.618388 [info ] [MainThread]: Registered adapter: clickhouse=1.9.3
+[0m10:22:59.675212 [debug] [MainThread]: Acquiring new clickhouse connection 'debug'
+[0m10:22:59.675561 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:23:00.278729 [debug] [MainThread]: dbt_clickhouse adapter: Got a retryable error when attempting to open a clickhouse connection.
+1 attempts remaining. Retrying in 1 seconds.
+Error:
+Error HTTPConnectionPool(host='clickhouse', port=8123): Max retries exceeded with url: /? (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10e09b110>: Failed to resolve 'clickhouse' ([Errno 8] nodename nor servname provided, or not known)")) executing HTTP request attempt 1 (http://clickhouse:8123)
+[0m10:23:01.295392 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m10:23:01.296752 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:23:01.297293 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Error HTTPConnectionPool(host='clickhouse', port=8123): Max retries exceeded with url: /? (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x10e101f30>: Failed to resolve 'clickhouse' ([Errno 8] nodename nor servname provided, or not known)")) executing HTTP request attempt 1 (http://clickhouse:8123)
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m10:23:01.307038 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.8675241, "process_in_blocks": "0", "process_kernel_time": 0.242838, "process_mem_max_rss": "179290112", "process_out_blocks": "0", "process_user_time": 1.051359}
+[0m10:23:01.308623 [debug] [MainThread]: Command `dbt debug` failed at 10:23:01.308453 after 1.87 seconds
+[0m10:23:01.309142 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:23:01.309520 [debug] [MainThread]: On debug: No close available on handle
+[0m10:23:01.309961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e102190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e12e570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1587c0>]}
+[0m10:23:01.310489 [debug] [MainThread]: Flushing usage events
+[0m10:23:02.582434 [debug] [MainThread]: An error was encountered while trying to flush usage events

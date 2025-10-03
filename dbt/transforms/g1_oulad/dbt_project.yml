@@ -1,0 +1,15 @@
+name: 'g1_oulad'
+version: '1.0.0'
+config-version: 2
+
+profile: 'g1_oulad'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+target-path: "target"
+log-path: "logs"
+
+models:
+  g1_oulad:
+    +materialized: view

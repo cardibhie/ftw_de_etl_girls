@@ -41,3 +41,9 @@ RUN playwright install chromium
 # Copy the rest of your pipeline code in
 COPY . .
 
+FROM ghcr.io/dbt-labs/dbt-clickhouse:latest
+
+# Optional: set working directory inside the container
+WORKDIR /workdir
+
+

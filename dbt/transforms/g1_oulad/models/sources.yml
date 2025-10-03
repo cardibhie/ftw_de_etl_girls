@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: raw
+    database: raw  # Explicitly specify ClickHouse database
+    tables:
+      - name: g1_oulad___  # Must match EXACTLY (3 underscores)
